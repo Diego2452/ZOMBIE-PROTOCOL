@@ -1,0 +1,10 @@
+# Exported from 3D Builder
+
+newmtl BottleColor_0
+Kd 0.640000 0.171247 0.030173
+
+newmtl LabelColor_0
+Kd 0.358698 0.640000 0.150625
+
+newmtl Default_0
+Kd 0.737255 0.737255 0.737255
