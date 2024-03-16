@@ -18,6 +18,10 @@ public class ZombieAttackState : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (SoundManager.Instance.zombieChannel1.isPlaying == false)
+        {
+            SoundManager.Instance.zombieChannel1.PlayOneShot(SoundManager.Instance.zombieAttack);
+        }
         LookAtPlayer();
         float distanceFromPlayer = Vector3.Distance(player.position, animator.transform.position);
         if (distanceFromPlayer > stopAttackingDistance)
@@ -34,6 +38,10 @@ public class ZombieAttackState : StateMachineBehaviour
         var yRotation = agent.transform.eulerAngles.y;
         agent.transform.rotation=Quaternion.Euler(0,yRotation, 0);
     }
+    public override  void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        
+        SoundManager.Instance.zombieChannel1.Stop();
+    }
 
-    
 }

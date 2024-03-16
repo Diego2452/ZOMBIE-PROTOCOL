@@ -519,7 +519,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4900c2cf45b6cda4ca8756c5d9ef8ba1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7a82b072efaa62f4f901d6a0990a1e4a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -636,4 +636,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolingTime: 10
   detectionArea: 15
-  patrolSpeed: 2
+  patrolSpeed: 1.5

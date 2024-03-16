@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
 
     private NavMeshAgent agent;
+
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +34,14 @@ public class EnemyController : MonoBehaviour
             {
                 animator.SetTrigger("DIE2");
             }
+            isDead = true;
+            SoundManager.Instance.zombieChannel2.PlayOneShot(SoundManager.Instance.zombieDeath);
         }
         else
         {
             animator.SetTrigger("DAMAGE");
+            SoundManager.Instance.zombieChannel2.PlayOneShot(SoundManager.Instance.zombieHurt);
+
         }
     }
     private void OnDrawGizmos()
