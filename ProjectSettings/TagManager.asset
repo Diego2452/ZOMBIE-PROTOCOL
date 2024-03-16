@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - Zombie
   - Waypoints
+  - ZombieHand
   layers:
   - Default
   - TransparentFX
