@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
+   public int bulletDamage;
     private void OnCollisionEnter(Collision objectWeHit)
     {
         if (objectWeHit.gameObject.CompareTag("Target"))
@@ -28,6 +30,14 @@ public class Bullet : MonoBehaviour
         {
             print("hit a beer bottle");
             objectWeHit.gameObject.GetComponent<BeerBottle>().Shatter();
+
+            // We will not destroy the bullet on impact, it will get destroyed according to its lifetime
+        }
+
+        if (objectWeHit.gameObject.CompareTag("Zombie"))
+        {
+            print("hit a zombie");
+            objectWeHit.gameObject.GetComponent<EnemyController>().TakeDamage(bulletDamage);
 
             // We will not destroy the bullet on impact, it will get destroyed according to its lifetime
         }
