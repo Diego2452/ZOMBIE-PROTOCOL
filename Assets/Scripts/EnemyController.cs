@@ -38,16 +38,14 @@ public class EnemyController : MonoBehaviour
             animator.SetTrigger("DAMAGE");
         }
     }
-
-    private void Update()
+    private void OnDrawGizmos()
     {
-        if (agent.velocity.magnitude > 0.1f)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 3f);//Attack and Stop Attacking
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position,15f);// Detection (start Chasing)
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 20f);// Stop Chasing
     }
+
 }
