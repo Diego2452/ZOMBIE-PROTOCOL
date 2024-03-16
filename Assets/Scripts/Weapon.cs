@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 {
 
     public bool isActiveWeapon;
+    public int weaponDamage;
 
     [Header("Shooting")]
     // Shooting
@@ -81,11 +82,15 @@ public class Weapon : MonoBehaviour
 
         if (isActiveWeapon)
         {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("WeaponRender");
+            }
             if (Input.GetMouseButtonDown(1))
             {
                 EnterADS();
             }
-            
+
             if (Input.GetMouseButtonUp(1))
             {
                 ExitADS();
@@ -134,6 +139,14 @@ public class Weapon : MonoBehaviour
             }
 
         }
+        else
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
+        }
+
 
 
     }
@@ -179,12 +192,15 @@ public class Weapon : MonoBehaviour
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
+        Bullet bul = bullet.GetComponent<Bullet>();
+        bul.bulletDamage = weaponDamage;
+
         // Pointing the bullet to face the shooting direction
         bullet.transform.forward = shootingDirection;
 
         // Shoot the bullet
         bullet.GetComponent<Rigidbody>().AddForce(shootingDirection * bulletVelocity, ForceMode.Impulse);
-        
+
         // Destroy the bullet after some time
         StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
 
@@ -213,7 +229,7 @@ public class Weapon : MonoBehaviour
         Invoke("ReloadCompleted", reloadTime);
     }
 
-    private void ReloadCompleted() 
+    private void ReloadCompleted()
     {
         if (WeaponManager.Instance.CheckAmmoLeftFor(thisWeaponModel) > magazineSize)
         {
