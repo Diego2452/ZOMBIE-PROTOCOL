@@ -77,6 +77,10 @@ public class Throwable : MonoBehaviour
             {
                 rb.AddExplosionForce(explosionForce, transform.position, damageRadius);
             }
+            if (objectInRange.gameObject.GetComponent<EnemyController>())
+            {
+                objectInRange.gameObject.GetComponent<EnemyController>().TakeDamage(100);
+            }
             
 
             //Also apply damage to enemy over here
