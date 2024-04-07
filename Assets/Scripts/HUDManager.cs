@@ -89,6 +89,9 @@ public class HUDManager : MonoBehaviour
             case Weapon.WeaponModel.M4a1:
                 return Resources.Load<GameObject>("M4a1_Weapon").GetComponent<SpriteRenderer>().sprite;
 
+            case Weapon.WeaponModel.KSG:
+                return Resources.Load<GameObject>("KSG_Weapon").GetComponent<SpriteRenderer>().sprite;
+
             default:
                 return null;
         }
@@ -103,6 +106,9 @@ public class HUDManager : MonoBehaviour
 
             case Weapon.WeaponModel.M4a1:
                 return Resources.Load<GameObject>("Rifle_Ammo").GetComponent<SpriteRenderer>().sprite;
+
+            case Weapon.WeaponModel.KSG:
+                return Resources.Load<GameObject>("Shotgun_Ammo").GetComponent<SpriteRenderer>().sprite;
 
             default:
                 return null;

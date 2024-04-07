@@ -15,6 +15,7 @@ public class WeaponManager : MonoBehaviour
     [Header("Ammo")]
     public int totalRifleAmmo = 0;
     public int totalPistolAmmo = 0;
+    public int totalShotgunAmmo = 0;
 
     [Header("Throwables General")]
     public float throwForce = 10f;
@@ -125,6 +126,9 @@ public class WeaponManager : MonoBehaviour
             case AmmoBox.AmmoType.RifleAmmo:
                 totalRifleAmmo += ammo.ammoAmount;
                 break;
+            case AmmoBox.AmmoType.ShotgunAmmo:
+                totalShotgunAmmo += ammo.ammoAmount;
+                break;
         }
     }
 
@@ -170,6 +174,9 @@ public class WeaponManager : MonoBehaviour
             case Weapon.WeaponModel.M1911:
                 totalPistolAmmo -= bulletsToDecrease;
                 break;
+            case Weapon.WeaponModel.KSG:
+                totalShotgunAmmo -= bulletsToDecrease;
+                break;
         }
     }
 
@@ -183,6 +190,9 @@ public class WeaponManager : MonoBehaviour
 
             case Weapon.WeaponModel.M1911:
                 return totalPistolAmmo;
+
+            case Weapon.WeaponModel.KSG:
+                return totalShotgunAmmo;
 
             default:
                 return 0;

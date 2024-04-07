@@ -51,7 +51,8 @@ public class Weapon : MonoBehaviour
     public enum WeaponModel
     {
         M1911,
-        M4a1
+        M4a1,
+        KSG
     }
 
     public WeaponModel thisWeaponModel;

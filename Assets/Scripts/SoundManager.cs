@@ -11,9 +11,11 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip m1911_fp;
     public AudioClip m4a1_fp;
+    public AudioClip ksg_fp;
 
     public AudioSource reloadingSoundM1911;
     public AudioSource reloadingSoundM4a1;
+    public AudioSource reloadingSoundKSG;
 
     public AudioSource emptyMagazineSoundM1911;
 
@@ -51,6 +53,9 @@ public class SoundManager : MonoBehaviour
             case WeaponModel.M4a1:
                 ShootingChannel.PlayOneShot(m4a1_fp);
                 break;
+            case WeaponModel.KSG:
+                ShootingChannel.PlayOneShot(ksg_fp);
+                break;
         }
     }
     public void PlayReloadSound(WeaponModel weapon)
@@ -61,6 +66,9 @@ public class SoundManager : MonoBehaviour
                 reloadingSoundM1911.Play();
                 break;
             case WeaponModel.M4a1:
+                reloadingSoundM4a1.Play();
+                break;
+            case WeaponModel.KSG:
                 reloadingSoundM4a1.Play();
                 break;
         }
