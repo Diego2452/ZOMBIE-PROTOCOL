@@ -13,6 +13,8 @@ public class ZombieController : MonoBehaviour
     [SerializeField]
     private Transform target;
 
+    
+
     [SerializeField]
     private float rotationSpeed = 5f;
 
@@ -20,6 +22,7 @@ public class ZombieController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindPlayer();
         GetReferences();
 
     }
@@ -51,5 +54,18 @@ public class ZombieController : MonoBehaviour
     private void GetReferences()
     {
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void FindPlayer()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player"); 
+        if (playerObject != null)
+        {
+            target = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("No se pudo encontrar el GameObject del jugador.");
+        }
     }
 }

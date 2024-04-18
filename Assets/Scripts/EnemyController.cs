@@ -71,12 +71,14 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
 
     private NavMeshAgent agent;
+    GameManager gameManager;
 
 
     public bool isDead;
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -98,7 +100,10 @@ public class EnemyController : MonoBehaviour
             isDead = true;
             SoundManager.Instance.zombieChannel2.PlayOneShot(SoundManager.Instance.zombieDeath);
             agent.isStopped = true;
+
             StartCoroutine(DestroyAfterAnimation());
+            gameManager.defeatedEnemies += 1;
+
         }
         else
         {
@@ -109,8 +114,8 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator DestroyAfterAnimation()
     {
-        yield return new WaitUntil(() => !animator.IsInTransition(0)); 
-        Destroy(gameObject, 5.0F); 
+        yield return new WaitUntil(() => !animator.IsInTransition(0));
+        Destroy(gameObject, 5.0F);
     }
 
     private void OnDrawGizmos()
