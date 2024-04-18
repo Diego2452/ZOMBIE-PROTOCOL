@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
     public GameObject[] spawnPoints;
     public GameObject[] enemies;
+
+    public TextMeshProUGUI waveText;
 
     public int waveCount;
     public int wave;
@@ -36,9 +39,9 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnWave(int waveC)
     {
         spawning = true;
-
+        waveText.text = "Wave " + wave;
         yield return new WaitForSeconds(4);
-
+        waveText.text = "";
         for (int i = 0; i <waveC; i++)
         {
             SpawnEnemy(wave);
