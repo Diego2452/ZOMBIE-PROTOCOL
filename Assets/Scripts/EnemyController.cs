@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,6 +37,8 @@ public class EnemyController : MonoBehaviour
             }
             isDead = true;
             SoundManager.Instance.zombieChannel2.PlayOneShot(SoundManager.Instance.zombieDeath);
+            agent.isStopped = true;
+
         }
         else
         {

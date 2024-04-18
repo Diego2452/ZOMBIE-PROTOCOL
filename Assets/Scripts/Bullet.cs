@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
             print("hit a zombie");
             if (objectWeHit.gameObject.GetComponent<EnemyController>().isDead == false)
             {
-objectWeHit.gameObject.GetComponent<EnemyController>().TakeDamage(bulletDamage);
+                objectWeHit.gameObject.GetComponent<EnemyController>().TakeDamage(10);
             }
             
             CreateBloodSprayEffect(objectWeHit);
@@ -59,6 +59,7 @@ objectWeHit.gameObject.GetComponent<EnemyController>().TakeDamage(bulletDamage);
             Quaternion.LookRotation(contact.normal));
 
         bloodSprayPrefab.transform.SetParent(objectWeHit.gameObject.transform);
+        Destroy(bloodSprayPrefab, 0.5f);
     }
 
     void CreateBulletImpactEffect(Collision objectWeHit)
