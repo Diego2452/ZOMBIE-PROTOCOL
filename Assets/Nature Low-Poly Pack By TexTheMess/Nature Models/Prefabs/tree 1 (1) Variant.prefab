@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d02df1693a84fca4db1950ab0655b5ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.626533
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d02df1693a84fca4db1950ab0655b5ff,
         type: 3}
@@ -99,3 +99,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -509830472144961369, guid: d02df1693a84fca4db1950ab0655b5ff, type: 3}
+--- !u!208 &974842498842319052
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278359078194417465}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.03, y: 9.107, z: 1.86}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.49, y: 8.968, z: 0.2}
+  m_TimeToStationary: 0.5
