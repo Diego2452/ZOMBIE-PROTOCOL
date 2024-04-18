@@ -114,6 +114,7 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator DestroyAfterAnimation()
     {
+
         yield return new WaitUntil(() => !animator.IsInTransition(0));
         Destroy(gameObject, 5.0F);
     }

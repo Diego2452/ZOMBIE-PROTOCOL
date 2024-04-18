@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class WaveManager : MonoBehaviour
     {
         if (spawning == false && enemiesSpawned == gameManager.defeatedEnemies)
         {
+            if(wave == 4)
+            {
+                SceneManager.LoadScene("winScene");
+            }
             StartCoroutine(SpawnWave(waveCount));
         }
     }
@@ -39,6 +44,7 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnWave(int waveC)
     {
         spawning = true;
+        yield return new WaitForSeconds(1);
         waveText.text = "Wave " + wave;
         yield return new WaitForSeconds(4);
         waveText.text = "";
