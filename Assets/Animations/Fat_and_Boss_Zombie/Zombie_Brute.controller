@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7958287cef27db541a0c0b7383878b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 6
+  damageInterval: 2
   stopAttackingDistance: 10
 --- !u!1101 &-3546903265184344494
 AnimatorStateTransition:
@@ -358,6 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7958287cef27db541a0c0b7383878b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 0
+  damageInterval: 2
   stopAttackingDistance: 0
 --- !u!1102 &5302051372196245787
 AnimatorState:

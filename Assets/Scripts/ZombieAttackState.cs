@@ -9,11 +9,17 @@ public class ZombieAttackState : StateMachineBehaviour
     NavMeshAgent agent;
     Transform player;
 
+    public int damageAmount = 2; 
+    public float damageInterval = 3f; 
+    private float timer = 0f;
+
     public float stopAttackingDistance;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
+        InflictDamageToPlayer();
+        timer = 0f;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -28,6 +34,20 @@ public class ZombieAttackState : StateMachineBehaviour
         {
             animator.SetBool("isAttacking", false);
         }
+
+        timer += Time.deltaTime;
+
+        if (timer >= damageInterval)
+        {
+            InflictDamageToPlayer();
+            timer = 0f;
+        }
+    }
+
+    private void InflictDamageToPlayer()
+    {
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        playerStats.TakeDamage(damageAmount);
     }
 
     private void LookAtPlayer()
