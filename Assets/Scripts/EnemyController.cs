@@ -73,11 +73,14 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent agent;
     GameManager gameManager;
 
+    private Collider _collider;
+
 
     public bool isDead;
 
     void Start()
     {
+        _collider = GetComponent<Collider>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -100,7 +103,7 @@ public class EnemyController : MonoBehaviour
             isDead = true;
             SoundManager.Instance.zombieChannel2.PlayOneShot(SoundManager.Instance.zombieDeath);
             agent.isStopped = true;
-
+            _collider.enabled = false;
             StartCoroutine(DestroyAfterAnimation());
             gameManager.defeatedEnemies += 1;
 
