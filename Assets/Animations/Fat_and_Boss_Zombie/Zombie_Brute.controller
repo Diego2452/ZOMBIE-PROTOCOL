@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c68224e2ac6a94bb8f3f7cd98a48d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 2
+  chaseSpeed: 5
   stopChasingDistance: 20
-  attackingDistance: 5
+  attackingDistance: 8
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Chase_State
-  m_Speed: 0.64
+  m_Speed: 0.65
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4382816729988400508}

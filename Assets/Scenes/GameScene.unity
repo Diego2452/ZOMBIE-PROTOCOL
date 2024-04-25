@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 69a06fe739efa6848954001588a4a95c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: da898b575a6ac4f44bfef3d21d3efd3a, type: 2}
 --- !u!4 &2150726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7695673013065257788, guid: daad19c035ee9754595afeba9c5be924,
@@ -9807,9 +9807,9 @@ MonoBehaviour:
   - {fileID: 148030408}
   enemies:
   - {fileID: 2059715505634689227, guid: 44d51d7265c125a498df725a65860301, type: 3}
-  - {fileID: 8169171382868168814, guid: 8bdef44bec26946479a09e9748d4f082, type: 3}
-  - {fileID: 8169171382868168814, guid: 8bdef44bec26946479a09e9748d4f082, type: 3}
-  - {fileID: 8169171382868168814, guid: 8bdef44bec26946479a09e9748d4f082, type: 3}
+  - {fileID: 318980886849798385, guid: dc6f04a767c02d341ad8aa6d2d5b59a7, type: 3}
+  - {fileID: 318980886849798385, guid: dc6f04a767c02d341ad8aa6d2d5b59a7, type: 3}
+  - {fileID: 318980886849798385, guid: dc6f04a767c02d341ad8aa6d2d5b59a7, type: 3}
   waveText: {fileID: 602931050}
   waveCount: 0
   wave: 0

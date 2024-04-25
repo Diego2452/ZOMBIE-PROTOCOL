@@ -52,10 +52,10 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i <waveC; i++)
         {
             SpawnEnemy(wave);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5F);
         }
         wave += 1;
-        waveCount += 20;
+        waveCount += 10  ;
         spawning = false;
 
         yield break;
